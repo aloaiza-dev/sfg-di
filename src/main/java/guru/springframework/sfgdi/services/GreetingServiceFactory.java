@@ -13,17 +13,14 @@ public class GreetingServiceFactory
     {
         switch ( lang )
         {
-            case "en":
-                return new PrimaryGreetingService();
+            case "de":
+                return new PrimaryGermanGreetingService( greetingRepository );
 
-//            case "de":
-//                return new PrimaryGermanGreetingService();
-//
-//            case "es":
-//                return new PrimarySpanishGreetingService();
+            case "es":
+                return new PrimarySpanishGreetingService( greetingRepository );
 
             default:
-                return new PrimaryGreetingService();
+                return new PrimaryGreetingService( greetingRepository );
         }
     }
 }
