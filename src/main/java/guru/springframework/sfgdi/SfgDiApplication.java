@@ -2,6 +2,7 @@ package guru.springframework.sfgdi;
 
 import guru.springframework.sfgdi.controllers.*;
 import guru.springframework.sfgdi.example.FakeDataSource;
+import guru.springframework.sfgdi.example.FakeJmsBroker;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
@@ -16,8 +17,11 @@ public class SfgDiApplication
 
         MyController controller = ( MyController ) ctx.getBean( "myController" );
 
-        FakeDataSource fakeDataSource = ( FakeDataSource ) ctx.getBean( FakeDataSource.class );
+        FakeDataSource fakeDataSource = ctx.getBean( FakeDataSource.class );
         System.out.println( fakeDataSource );
+
+        FakeJmsBroker fakeJmsBroker = ctx.getBean( FakeJmsBroker.class );
+        System.out.println( fakeJmsBroker );
 
 //        System.out.println( controller.sayHello() );
 //        System.out.println( ctx.getBean( PropertyInjectedController.class ).getGreeting() );

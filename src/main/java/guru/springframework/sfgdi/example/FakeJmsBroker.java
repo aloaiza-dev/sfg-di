@@ -1,19 +1,19 @@
 package guru.springframework.sfgdi.example;
 
-public class FakeDataSource
+public class FakeJmsBroker
 {
-    private String user;
+    private String username;
     private String password;
     private String url;
 
-    public String getUser()
+    public String getUsername()
     {
-        return user;
+        return username;
     }
 
-    public void setUser( String user )
+    public void setUsername( String username )
     {
-        this.user = user;
+        this.username = username;
     }
 
     public String getPassword()
@@ -39,8 +39,8 @@ public class FakeDataSource
     @Override
     public String toString()
     {
-        return "FakeDataSource{" +
-                "username='" + user + '\'' +
+        return "FakeJmsBroker{" +
+                "username='" + username + '\'' +
                 ", password='" + password + '\'' +
                 ", url='" + url + '\'' +
                 '}';
